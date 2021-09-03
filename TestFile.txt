@@ -1,3 +1,13 @@
+<<<<<<< HEAD
 This is a test file.
 Name is Dylan Lyman
 !!!!!!!!!!!!!!!!
+=======
+<<<<<<< HEAD
+LUIS MADE THIS CHANGE
+=======
+Name is Dylan Lyman
+>>>>>>>
+
+Have you ever heard of the tragedy of Darth Plageuis the wise? I thought not, it's not a story the Jedi would tell you.
+>>>>>>> 9a93c2e916b4d0230cdd15b3c05d906a3bb7b390
