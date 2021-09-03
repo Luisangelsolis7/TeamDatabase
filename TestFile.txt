@@ -1,31 +1,5 @@
+Luis
+Dylan
+Joey
+Savanna
 
-LUIS MADE THIS CHANGE
-
-Name is Dylan Lyman
-
-Have you ever heard of the tragedy of Darth Plageuis the wise? I thought not, it's not a story the Jedi would tell you.
-
-STARWARS
-
-This is a test file.
-Name is Dylan Lyman
-!!!!!!!!!!!!!!!!
-
-
-LUIS MADE THIS CHANGE
-
-Name is Dylan Lyman
-
-SAVANNA MUSSA
-Have you ever heard of the tragedy of Darth Plageuis the wise? I thought not, it's not a story the Jedi would tell you.
-
-
-Run
-Break
-Test
-
-Redo
-
-Redo
-
-Here is a commit to main
