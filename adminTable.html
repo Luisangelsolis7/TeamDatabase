@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    body{
+        text-align: center;
+        background-color: lightblue;
+    }
+</style>
 <head>
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
@@ -8,38 +14,73 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background-color: lightblue">
 
 <div class="container">
     <h2>AU Lost and Found</h2>
     <p>Vey Basic Prototype</p>
-    <table class="table table-bordered">
+    <p>
+        <input class="textbox">
+        <button class="onclick">
+            Search
+        </button>
+        <label for="litem">Filter:</label>
+        <select name="litem" id="litem">
+            <option value="null"></option>
+            <option value="phone">Phone</option>
+            <option value="keys">Keys</option>
+            <option value="ID">ID</option>
+            <option value="clothes">Clothing</option>
+            <option value="accessories">Accessories</option>
+            <option value="misc">Miscellaneous</option>
+        </select>
+
+    </p>
+    <table class="table table-bordered" style="background-color: whitesmoke">
         <thead>
-        <tr>
             <th>ID Number</th>
             <th>Item</th>
             <th>Description</th>
+            <th>Location Found</th>
         </tr>
         </thead>
         <tbody>
         <tr>
             <td>1</td>
-            <td>Iphone 12 pro</td>
-            <td>Red, black case, found in Duhnam</td>
+            <td>Phone</td>
+            <td>Red iPhone 12 Pro, black case</td>
+            <td>Dunham Hall</td>
         </tr>
         <tr>
             <td>2</td>
             <td>Wallet</td>
-            <td>Black leather, cash inside, no ID, found in ICE</td>
+            <td>Black leather, cash inside, no ID</td>
+            <td>STEM</td>
         </tr>
         <tr>
             <td>3</td>
             <td>Keys</td>
             <td>3 keys, and AU key chain</td>
+            <td>ICE</td>
         </tr>
+        <tr>
+            <td>4</td>
+            <td>ID</td>
+            <td>John Smith, Brown Hair, Brown Eyes, 5' 11" 180 lbs</td>
+            <td>Southlawn Lot</td>
+        </tr>
+
+
         </tbody>
     </table>
+    <p>
+        <textarea id="claim" class="claim" placeholder="Enter the claimant's Info"></textarea>
+    </p>
+    <button>Remove Item</button>
 </div>
+
+
+
 
 </body>
 </html>

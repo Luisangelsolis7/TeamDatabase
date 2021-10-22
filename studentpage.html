@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    body{
+        text-align: center;
+        background-color: lightblue;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <title>Lost and Found</title>
     <style>
         body {text-align: center;}
     </style>
-<body style="background-color:lightblue;">
 </body>
 </head>
 
@@ -17,9 +22,20 @@
     <select name="litem" id="litem">
         <option value="phone">Phone</option>
         <option value="keys">Keys</option>
+        <option value="ID">ID</option>
         <option value="clothes">Clothing</option>
         <option value="accessories">Accessories</option>
         <option value="misc">Miscellaneous</option>
+    </select>
+
+    <label for="litem">Location:</label>
+    <select name="litem" id="loc">
+        <option value="Dunham">Dunham Hall</option>
+        <option value="ICE">Institute for Collaboration</option>
+        <option value="Southlawn Lot">Southlawn Lot</option>
+        <option value="Parking Garage">Parking Garage</option>
+        <option value="Stem">STEM building</option>
+        <option value="Crimi Auditorim">Crimi Auditorium</option>
     </select><br><br>
     <label for="description">Brief description of lost item:</label><br />
     <textarea id="description" name="description" rows="4" cols="50">
