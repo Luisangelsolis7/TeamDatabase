@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<style>
+    body{
+        text-align: center;
+        background-color: antiquewhite;
+    }
+    img{
+        height: 20%;
+        width: 25%;
+    }
+    a{
+        text-decoration: none;
+        color:black;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title><% title %></title>
+</head>
+<body>
+<div><img class="one" src="img/Aurora_University_logo.jpg" alt="Aurora Banner"></div>
+<h1><% title %></h1>
+</br>
+<form>
+    Username: <input type="text"></br>
+    Password: <input type="text"></br>
+    </br>
+    <button><a href="http://localhost:3000/claimed">Admin Log-In</a></button>
+</form>
+
+</body>
 </html>
