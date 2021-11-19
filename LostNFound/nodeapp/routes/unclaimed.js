@@ -5,7 +5,7 @@ var db=require('../database');
 // this script to fetch data from MySQL databse table
 //router.get looks for words in url
 router.get('/unclaimed', function(req, res, next) {
-  var sql='SELECT * FROM Found';
+  var sql='SELECT * FROM Item';
   db.query(sql, function (err, data, fields) {
     if (err) throw err;
     //name of view file in res.render
