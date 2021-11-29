@@ -35,5 +35,37 @@
         <% } %>
     </table>
 </div>
+<h2>Add an Item</h2>
+<p>Click on the "Open Form" button to add an item</p>
+<div class="openBtn">
+    <button class="openButton" onclick="openForm()"><strong>Open Form</strong></button>
+</div>
+<div class="AddItemPopUp0">
+    <div class="formPopup" id="popupForm">
+        <form  class="formContainer">
+            <h2>Item Details</h2>
+            <label for="email">
+                <strong>E-mail</strong>
+            </label>
+            <input type="text" id="email" placeholder="Your Email" name="email" required>
+            <label for="psw">
+                <strong>Password</strong>
+            </label>
+            <input type="password" id="psw" placeholder="Your Password" name="psw" required>
+            <button type="submit" class="btn">Log in</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+</div>
+<script>
+    openForm();
+    function openForm() {
+        document.getElementById("popupForm").style.display = "block";
+    }
+    function closeForm() {
+        document.getElementById("popupForm").style.display = "none";
+    }
+
+</script>
 </body>
 </html>
