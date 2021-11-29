@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--    First/Last name (Fill in box)-->
+    <!--    Item Type (Drop Down)-->
+    <!--    Where you lost it? (Location Drop Down)-->
+    <!--    When lost it? (Date) -->
+    <!--    Describe (Text Box) -->
+    <style>
+    </style>
+</head>
+<body>
+<h1 align="center">Report Lost Item Form</h1>
+<p align="center"><img src="../LostNFound/nodeapp/pictures/Aurora_Logo.png" height="100px" width="200px"></p>
+<div class="row" align="center">
+    <div class="col">
+        <input type="text" class="form-control" placeholder="First name">
+    </div>
+    <div class="col">
+        <input type="text" class="form-control" placeholder="Last name">
+    </div>
+</div>
+<p align="center"><label for="item">Choose an Item Type:</label>
+
+    <select name="item" id="item" >
+        <option value="Phone">Phone</option>
+        <option value="Jewelery">Jewelery</option>
+        <option value="Wallet">Wallet</option>
+        <option value="Keys">Keys</option>
+    </select></p>
+<p align="center"><label for="location">Choose a Location:</label>
+
+    <select name="location" id="location">
+        <option value="Stem">Stem</option>
+        <option value="Dunham">Dunham</option>
+        <option value="Institution">Institution</option>
+        <option value="Alumni">Alumni</option>
+    </select></p>
+<p align="center"><label for="date">Date for Lost Item:</label>
+    <input type="date" id="date" name="date"></p>
+<!-- <p align="center">Enter Item Description Here:<input type="textbox" class="describe" name="descibe"/></p>-->
+<p align="center">Enter Item Description</p>
+<p align="center"><textarea id="describe" name="describe" rows="4" cols="50"></textarea>
+</p>
+</form>
+</body>
+</html>
