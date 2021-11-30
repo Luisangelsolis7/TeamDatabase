@@ -14,11 +14,11 @@ router.post('/create', function(req, res, next) {
   let ItemCat = req.body.itemcat;
   let ItemName = req.body.itemname;
   let ItemDesc = req.body.itemdesc;
-  let Value = req.body.itemvalue;
+  let ItemValue = req.body.itemvalue;
 
   // insert user data into users table
-  let sql = `INSERT INTO Item (ItemID, Item_Catagory, ItemName, ItemDesc, Value)
-      VALUES(null, '${ItemCat}', '${ItemName}', '${ItemDesc}'. '${Value}' ) `;
+  let sql = `INSERT INTO Item (ItemID, Item_Catagory, ItemName, ItemDesc, ItemValue)
+      VALUES(null, '${ItemCat}', '${ItemName}', '${ItemDesc}', ${ItemValue}) `;
   db.query(sql,function (err, data) {
     if (err) throw err;
     console.log("User dat is inserted successfully ");
@@ -28,7 +28,7 @@ router.post('/create', function(req, res, next) {
 
 
 router.get('/user-list', function(req, res, next) {
-  let sql = `SELECT i.ItemID, c.CategoryName, i.ItemName, i.Value, i.ItemDesc, ish.StatusID_FK, ish.Location, ish.Date, ish.Time, o.BadgeNumber, o.Officer_Lname
+  let sql = `SELECT i.ItemID, c.CategoryName, i.ItemName, i.ItemValue, i.ItemDesc, ish.StatusID_FK, ish.Location, ish.Date, ish.Time, o.BadgeNumber, o.Officer_Lname
   FROM (Select h.ItemID_FK, h.Date, h.StatusID_FK, h.OfficerID_FK, h.Location, h.Time
   From Item_Status_History h,
       (Select ItemID_FK, MAX(Date) as mdate from Item_Status_History

@@ -5,9 +5,12 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
+let bodyParser = require('body-parser');
 ;
 let app = express();
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended : true}))
 // view engine setup
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

@@ -10,17 +10,17 @@
     <form action="/users/create" method="POST">
         <label for="ItemCategory">Item Category:</label>
         <select name="itemcat" id="itemcat">
-            <option value="Wallet">Wallet</option>
-            <option value="Phone">Phone</option>
-            <option value="Keys">Keys</option>
-            <option value="ID">ID</option>
+            <option value="2">Wallet</option>
+            <option value="1">Electronic</option>
+            <option value="3">Keys</option>
+            <option value="4">ID</option>
         </select>
         <label>Item Name</label>
-        <input type="text" placeholder="Enter Item Name" id="itemname" required>
+        <input type="text" placeholder="Enter Item Name" name="itemname" required>
         <label>Description</label>
-        <input type="textarea" placeholder="Enter Item Desc" id="itemdesc" >
+        <input type="textarea" placeholder="Enter Item Desc" name="itemdesc" >
         <label>Value</label>
-        <input type="textarea" placeholder="Enter Item Value" id="itemvalue" >
+        <input type="textarea" placeholder="Enter Item Value" name="itemvalue" >
         <button type="submit">Submit</button>
 </div>
 </div>
