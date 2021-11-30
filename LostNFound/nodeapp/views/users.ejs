@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<!--====form section start====-->
+<div class="user-detail">
+    <h2>Create User Data</h2>
+    <form action="/users/create" method="POST">
+        <label for="ItemCategory">Item Category:</label>
+        <select name="itemcat" id="itemcat">
+            <option value="Wallet">Wallet</option>
+            <option value="Phone">Phone</option>
+            <option value="Keys">Keys</option>
+            <option value="ID">ID</option>
+        </select>
+        <label>Item Name</label>
+        <input type="text" placeholder="Enter Item Name" id="itemname" required>
+        <label>Description</label>
+        <input type="textarea" placeholder="Enter Item Desc" id="itemdesc" >
+        <label>Value</label>
+        <input type="textarea" placeholder="Enter Item Value" id="itemvalue" >
+        <button type="submit">Submit</button>
+</div>
+</div>
+<!--====form section start====-->
+</body>
+</html>

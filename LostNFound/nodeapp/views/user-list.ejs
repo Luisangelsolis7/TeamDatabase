@@ -10,9 +10,14 @@
         <tr>
             <th>Item ID</th>
             <th>Item Type</th>
-            <th>Item Location</th>
-            <th>Edit</th>
-            <th>Claim</th>
+            <th>Item Name</th>
+            <th>Description</th>
+            <th>Value</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Officer Last Name</th>
+            <th>Officer Badge Number</th>
         </tr>
 
         <%
@@ -21,10 +26,16 @@
         userData.forEach(function(data){
         %>
         <tr>
-            <td><%=data.item_id %></td>
-            <td><%=data.item_type %></td>
-            <td><%=data.item_loc_found %></td>
-            <td><a href="/users/edit/<%=data.id%>">Edit</a></td>
+            <td><%=data.ItemID %></td>
+            <td><%=data.CategoryName %></td>
+            <td><%=data.ItemName %></td>
+            <td><%=data.ItemDesc %></td>
+            <td><%=data.Value %></td>
+            <td><%=data.Location %></td>
+            <td><%=data.Date %></td>
+            <td><%=data.Time %></td>
+            <td><%=data.Officer_Lname %></td>
+            <td><%=data.BadgeNumber %></td>
             <td><a href="/users/delete/<%=data.id%>">Claim</a></td>
         </tr>
         <%  i++; }) %>
@@ -35,5 +46,8 @@
         <% } %>
     </table>
 </div>
+
+
+
 </body>
 </html>
