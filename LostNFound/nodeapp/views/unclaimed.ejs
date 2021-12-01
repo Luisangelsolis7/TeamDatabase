@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Unclaimed Items</title>
+    <p align="right">
+        <button><a href="/">Log Out</a></button>
+    </p>
+</head>
+<body>
+<div class="table-data">
+    <h2>Unclaimed Items</h2>
+    <table border="1">
+        <tr>
+            <th>Item ID</th>
+            <th>Item Type</th>
+            <th>Item Name</th>
+            <th>Description</th>
+            <th>Value</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Officer Last Name</th>
+            <th>Officer Badge Number</th>
+        </tr>
+
+        <%
+        if(userData.length!=0){
+            var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=data.ItemID %></td>
+            <td><%=data.CategoryName %></td>
+            <td><%=data.ItemName %></td>
+            <td><%=data.ItemDesc %></td>
+            <td><%=data.ItemValue %></td>
+            <td><%=data.Location %></td>
+            <td><%=data.Date %></td>
+            <td><%=data.Time %></td>
+            <td><%=data.Officer_Lname %></td>
+            <td><%=data.BadgeNumber %></td>
+            <td><a href="/admin/claimform/<%=data.id%>">Claim</a></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+</div>
+<div align="center">
+    <button><a href="/admin/Lost">Lost Items</a></button>
+    <button><a href="/admin/claimed">Claimed Items</a></button>
+    </br>
+    <button><a href="/admin/logform">Log an unclaimed item</a></button>
+</div>
+
+
+
+</body>
+</html>

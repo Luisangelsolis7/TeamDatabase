@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lost Items</title>
+    <p align="right">
+        <button><a href="/">Log Out</a></button>
+    </p>
+</head>
+<body>
+<div class="table-data">
+    <h2>Lost Items</h2>
+    <table border="1">
+        <tr>
+            <th>Item ID</th>
+            <th>Item Category</th>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Value</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Name</th>
+            <th>Driver's License</th>
+        </tr>
+
+        <%
+        if(userData.length!=0){
+            var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=data.ItemID %></td>
+            <td><%=data.CategoryName %></td>
+            <td><%=data.ItemName %></td>
+            <td><%=data.ItemDesc %></td>
+            <td><%=data.ItemValue %></td>
+            <td><%=data.Location %></td>
+            <td><%=data.Date %></td>
+            <td><%=data.Time %></td>
+            <td><%=data.User_Fname %> <%=data.User_Lname %></td>
+            <td><%=data.DriverLicenseNumber %></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+</div>
+
+<div align="center">
+    <button><a href="/admin/unclaimed">Unclaimed Items</a></button>
+    <button><a href="/admin/claimed">Claimed Items</a></button>
+</div>
+
+
+
+
+</body>
+</html>

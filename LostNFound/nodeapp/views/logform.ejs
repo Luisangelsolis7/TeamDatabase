@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<!--====form section start====-->
+<div class="log-form">
+    <h2>Log an Item</h2>
+    <form action="/admin/create" method="POST">
+        <label for="ItemCategory">Item Category:</label>
+        <select name="itemcat" id="itemcat">
+            <option value="1">Electronic</option>
+            <option value="2">Wallet</option>
+            <option value="3">Keys</option>
+            <option value="4">ID</option>
+        </select>
+        <label>Item Name</label>
+        <input type="text" placeholder="Enter Item Name" name="itemname" required>
+        <label>Description</label>
+        <input type="text" placeholder="Enter Item Desc" name="itemdesc" >
+        <label>Value</label>
+        <input type="text" placeholder="Enter Item Value" name="itemvalue" >
+        <label>Location</label>
+        <input type="text" placeholder="Enter Location" name="itemlocation" >
+        <label>Date</label>
+        <input type="date" placeholder="Enter Date" name="itemdate" >
+        <label>Time</label>
+        <input type="time" placeholder="Enter Time" name="itemtime" >
+
+        <button type="submit">Submit</button>
+</div>
+<div align="center">
+    <br><br>
+<button><a href="/admin/claimed"> Back to Unclaimed Items</a></button>
+</div>
+<!--====form section start====-->
+</body>
+</html>
