@@ -9,20 +9,35 @@ router.get('/form', function(req, res, next) {
 });
 
 router.post('/create', function(req, res, next) {
+  // store all the item input data
+  let itemCat = req.body.itemcat;
+  let itemName = req.body.itemname;
+  let itemDesc = req.body.itemdesc;
+  let itemValue = req.body.itemvalue;
 
-  // store all the user input data
-  let ItemCat = req.body.itemcat;
-  let ItemName = req.body.itemname;
-  let ItemDesc = req.body.itemdesc;
-  let ItemValue = req.body.itemvalue;
+  //Store all status data
+  let location = req.body.itemlocation;
+  let date = req.body.itemdate;
+  let time = req.body.itemtime;
 
-  // insert user data into users table
+
+
+  // insert item data into item table
   let sql = `INSERT INTO Item (ItemID, Item_Catagory, ItemName, ItemDesc, ItemValue)
-      VALUES(null, '${ItemCat}', '${ItemName}', '${ItemDesc}', ${ItemValue}) `;
-  db.query(sql,function (err, data) {
+      VALUES(null, '${itemCat}', '${itemName}', '${itemDesc}', ${itemValue})`;
+  db.query(sql,function (err, result) {
     if (err) throw err;
-    console.log("User dat is inserted successfully ");
+    console.log("Item is inserted successfully ");
+    let id = result.insertId;
+    sql = `Insert into Item_Status_History(ItemID_FK, StatusID_FK, Location, Date, Time) 
+    Values (${id}, 'Found', '${location}', '${date}', '${time}')`
+    db.query(sql, function (err){
+      if(err) throw err;
+      console.log("Item Status Inserted!");
+    })
   });
+
+
   res.redirect('/users/form');  // redirect to user form page after inserting the data
 });
 
@@ -36,16 +51,15 @@ router.get('/user-list', function(req, res, next) {
   where t.ItemID_FK = h.ItemID_FK and t.mdate = h.date) ish
   Join Item i
   on i.ItemID = ish.ItemID_FK
-  Join Officer o
+  Left Join Officer o
   on o.BadgeNumber = ish.OfficerID_FK
   join Category c
   on i.Item_Catagory = c.CategoryID
   Where ish.StatusID_FK = 'Found'
-  Order by ish.Date`;
+  Order by ish.Date DESC`;
   db.query(sql, function (err, data, fields) {
     if (err) throw err;
     res.render('user-list', { title: 'User List', userData: data});
-    console.log(data)
   });
 });
 
