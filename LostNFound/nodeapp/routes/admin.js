@@ -8,6 +8,47 @@ router.get('/logform', function(req, res, next) {
   res.render('logform');
 });
 
+router.get('/claim/:id', function(req, res, next) {
+  let itemID = req.params.id;
+  console.log(itemID);
+  let sql = `Select * From Item_Status_History where ItemID_FK=${itemID} and StatusID_FK = 'Found'`;
+  db.query(sql, function (err, data){
+    if (err) throw err;
+    res.render('claimform', {editData:data[0]});
+  })
+});
+
+router.post('/claim/:id', function(req, res, next) {
+  let itemID = req.params.id;
+  console.log(itemID);
+  let userFName = req.body.firstname;
+  let userLName = req.body.lastname;
+  let date = req.body.claimdate;
+  let time = req.body.claimtime;
+  let driverLicense  = req.body.driverLicense;
+
+  let sql = `Insert into User(UserID, User_Fname, User_Lname, DriverLicenseNumber) 
+                VALUES (null, '${userFName}', '${userLName}', '${driverLicense}')`;
+  db.query(sql, function (err, result) {
+    if (err) throw err;
+    let userid = result.insertId;
+
+    console.log(itemID);
+    console.log("User Added");
+    sql = `Insert into Item_Status_History (ItemID_FK, StatusID_FK, Date ,Time, UserID_FK) 
+            Values('${itemID}', 'Claimed', '${date}', '${time}', ${userid})`;
+    db.query(sql, function (err){
+      if(err) throw err;
+      console.log("Item successfully claimed!")
+    })
+
+
+  });
+  res.redirect('/admin/claimed');
+});
+
+
+
 router.post('/create', function(req, res, next) {
   // store all the item input data
   let itemCat = req.body.itemcat;
