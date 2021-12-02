@@ -1,63 +1,31 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-<style>
-    body{
 
-        text-align: center;
-        background-color: antiquewhite;
-        background-image: url('public/img/AU_Campus.jpg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
+<link rel="stylesheet" href="stylesheets/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    }
-    button {
-        background-color: dodgerblue;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-    }
-    form{
-        height:300px;
-        font-size:20pt;
-        font-family: "Calibri";
 
-    }
-    input{
-        height:30px;
-        width: 300px;
-        font-size:14pt;
-    }
-    img{
-        height: 20%;
-        width: 25%;
-    }
-    a{
-        text-decoration: none;
-        color:black;
-    }
-
-</style>
 <head>
-    <meta charset="UTF-8">
-    <title><% title %></title>
+  <meta charset="UTF-8">
+  <title>Lost And Found</title>
 </head>
 <body>
-<div style="background-color:white; width: 500px; text-align:center; vertical-align: center; margin-left: auto;
-  margin-right: auto;  ">
-    <div><img class="one" src="public/img/Aurora_University_logo.jpg" alt="Aurora Banner"></div>
-    <h1> Log In </h1>
+<div style="background-color:white; width: 500px; height: 650px; text-align:center; vertical-align: center; margin-left: auto;
+  margin-right: auto;">
+  <div><img class="one" src="images/Aurora_University_logo.jpg" alt="Aurora Banner" style="height: 130px;width: 400px;"></div>
+  <h1> Lost And Found </h1>
+  </br>
+  <form>
+    Username </br><input type="text" size="50" ></br>
+    Password </br><input type="text" size="50"></br>
     </br>
-    <form>
-        Username </br><input type="text" size="50" ></br>
-        Password </br><input type="text" size="50"></br>
-        </br>
-        <button><a href="http://localhost:3000/unclaimed">Admin Log-In</a></button>
-    </form>
+    <button><a href="/admin/unclaimed">Admin Log-In</a></button>
+  </form>
+  <form>
+
+    <button><a href="/lostform">Report A Lost Item</a></button>
+  </form>
 </div>
 </body>
 </html>

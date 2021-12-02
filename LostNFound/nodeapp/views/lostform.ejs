@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <p align="left">
+        <button><a href="/">Back</a></button>
+    </p>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+<!--====form section start====-->
+<div class="lost-form" style="background-color:white; width: 500px;height: 1000px; text-align:center; vertical-align: center; margin-left: auto;
+  margin-right: auto;">
+    <div><img class="one" src="images/Aurora_University_logo.jpg" alt="Aurora Banner" style="height: 130px;width: 400px;"></div>
+    <h2>Report A Lost Item</h2>
+    <form action="/create" method="POST">
+        <label for="ItemCategory">Item Category:</label>
+        <select name="itemcat" id="itemcat">
+            <option value="1">Electronic</option>
+            <option value="2">Wallet</option>
+            <option value="3">Keys</option>
+            <option value="4">ID</option>
+        </select>
+        <label>Item Name</label>
+        <input type="text" placeholder="Enter Item Name" name="itemname" required>
+        <label>Description</label>
+        <input type="text" placeholder="Enter Item Desc" name="itemdesc" >
+        <label>Value</label>
+        <input type="text" placeholder="Enter Item Value" name="itemvalue" >
+        <label>Location</label>
+        <input type="text" placeholder="Enter Location" name="itemlocation" >
+        <label>Date</label>
+        <input type="date" placeholder="Enter Date" name="itemdate" >
+        <label>Time</label>
+        <input type="time" placeholder="Enter Time" name="itemtime" >
+        <label>First Name</label>
+        <input type="text" placeholder="Enter First Name" name="firstname" >
+        <label>Last Name</label>
+        <input type="text" placeholder="Enter First Name" name="lastname" >
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<!--====form section start====-->
+</body>
+</html>
