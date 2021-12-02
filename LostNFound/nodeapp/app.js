@@ -1,3 +1,4 @@
+
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
@@ -6,15 +7,13 @@ let logger = require('morgan');
 let indexRouter = require('./routes/index');
 let adminRouter = require('./routes/admin');
 let bodyParser = require('body-parser');
-;
+
 let app = express();
+
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended : true}))
 // view engine setup
-
-
-
 
 app.set('views', path.join(__dirname, 'views'));
 

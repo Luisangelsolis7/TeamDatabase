@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <title>Unclaimed Items</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/stylesheets/style.css">
@@ -27,6 +28,7 @@
             <th>Time</th>
             <th>Officer Last Name</th>
             <th>Officer Badge Number</th>
+
         </tr>
 
         <%
@@ -35,6 +37,7 @@
         userData.forEach(function(data){
         %>
         <tr>
+
             <td><%=data.ItemID %></td>
             <td><%=data.CategoryName %></td>
             <td><%=data.ItemName %></td>
@@ -62,9 +65,5 @@
     <br>
 </div>
 </div>
-
-
-
-
 </body>
 </html>
