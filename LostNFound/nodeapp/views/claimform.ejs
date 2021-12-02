@@ -2,10 +2,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
 <!--====form section start====-->
-<div class="claim-form">
+<div class="claim-form" style="background-color:white; width: 500px;height: 775px; text-align:center; vertical-align: center; margin-left: auto;
+  margin-right: auto;">
     <h2>Claim Item</h2>
     <form action="<%=(typeof editData!='undefined')?'/admin/claim/'+editData.ItemID_FK:'/admin/create'%>" method="POST">
         <label>Date</label>
@@ -21,12 +23,11 @@
 
 
 
-        <button type="submit">Submit</button>
+        <br><button type="submit">Submit</button>
+        <br><button><a href="/admin/claimed"> Back to Unclaimed Items</a></button>
+    </form>
 </div>
-<div align="center">
-    <br><br>
-<button><a href="/admin/claimed"> Back to Unclaimed Items</a></button>
-</div>
+
 <!--====form section start====-->
 </body>
 </html>

@@ -1,25 +1,30 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<link rel="stylesheet" href="stylesheets/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 <head>
+  <meta charset="UTF-8">
+  <title>Lost And Found</title>
 </head>
 <body>
-<h1 align="center">Aurora Lost and Found</h1>
-<p align="center"><img src=".public/images/AU_Campus.jpg" height="100px" width="200px"></p>
-
-<form action="">
-  <p align="center">
-    </br>
-    <button><a href="/lostform">Report a Lost Item</a></button>
-  </p>
-</form>
-
-<form action="">
-  <p align="center">
-  Username: <input type="text"></br>
-  Password: <input type="text"></br>
+<div style="background-color:white; width: 500px; height: 650px; text-align:center; vertical-align: center; margin-left: auto;
+  margin-right: auto;">
+  <div><img class="one" src="images/Aurora_University_logo.jpg" alt="Aurora Banner" style="height: 130px;width: 400px;"></div>
+  <h1> Lost And Found </h1>
   </br>
-  <button><a href="/admin/unclaimed">Admin Log-In</a></button>
-  </p>
-</form>
+  <form>
+    Username </br><input type="text" size="50" ></br>
+    Password </br><input type="text" size="50"></br>
+    </br>
+    <button><a href="/admin/unclaimed">Admin Log-In</a></button>
+  </form>
+  <form>
+
+    <button><a href="/lostform">Report A Lost Item</a></button>
+  </form>
+</div>
 </body>
 </html>

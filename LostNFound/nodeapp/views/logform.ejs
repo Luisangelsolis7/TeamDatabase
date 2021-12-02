@@ -2,10 +2,15 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <p align="left">
+    <button><a href="/admin/unclaimed"> Back to Unclaimed Items</a></button>
+    </p>
 </head>
 <body>
-<!--====form section start====-->
-<div class="log-form">
+<div class="log-form" style="background-color:white; width: 500px;height: 775px; text-align:center; vertical-align: center; margin-left: auto;
+  margin-right: auto;">
+    <div><img class="one" src="/images/Aurora_University_logo.jpg" alt="Aurora Banner" style="height: 130px;width: 400px;"></div>
     <h2>Log an Item</h2>
     <form action="/admin/create" method="POST">
         <label for="ItemCategory">Item Category:</label>
@@ -18,7 +23,7 @@
         <label>Item Name</label>
         <input type="text" placeholder="Enter Item Name" name="itemname" required>
         <label>Description</label>
-        <input type="text" placeholder="Enter Item Desc" name="itemdesc" >
+        <input type="text" placeholder="Enter Item Desc" name="itemdesc" required>
         <label>Value</label>
         <input type="text" placeholder="Enter Item Value" name="itemvalue" >
         <label>Location</label>
@@ -27,13 +32,13 @@
         <input type="date" placeholder="Enter Date" name="itemdate" >
         <label>Time</label>
         <input type="time" placeholder="Enter Time" name="itemtime" >
+        <br><br>
 
         <button type="submit">Submit</button>
+    </form>
+
+
 </div>
-<div align="center">
-    <br><br>
-<button><a href="/admin/claimed"> Back to Unclaimed Items</a></button>
-</div>
-<!--====form section start====-->
+
 </body>
 </html>
