@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <title>Unclaimed Items</title>
+    <title>Claimed Items</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <p align="right">
@@ -13,9 +12,8 @@
 <body>
 <div class="container" style="background-color:white; width: 75%;height: 100%; text-align:center; vertical-align: center; margin-left: auto;
   margin-right: auto;">
-
-<div class="table-data" style="vertical-align: center">
-    <h2>Unclaimed Items</h2>
+<div class="table-data">
+    <h2>Claimed Items</h2>
     <table border="1">
         <tr>
             <th>Item ID</th>
@@ -23,12 +21,12 @@
             <th>Item Name</th>
             <th>Description</th>
             <th>Value</th>
-            <th>Location</th>
             <th>Date</th>
             <th>Time</th>
+            <th>Name</th>
+            <th>Driver's License</th>
             <th>Officer Last Name</th>
             <th>Officer Badge Number</th>
-
         </tr>
 
         <%
@@ -37,18 +35,17 @@
         userData.forEach(function(data){
         %>
         <tr>
-
             <td><%=data.ItemID %></td>
             <td><%=data.CategoryName %></td>
             <td><%=data.ItemName %></td>
             <td><%=data.ItemDesc %></td>
             <td><%=data.ItemValue %></td>
-            <td><%=data.Location %></td>
             <td><%=data.Date %></td>
             <td><%=data.Time %></td>
+            <td><%=data.User_Fname %> <%=data.User_Lname %></td>
+            <td><%=data.DriverLicenseNumber %></td>
             <td><%=data.Officer_Lname %></td>
             <td><%=data.BadgeNumber %></td>
-            <td><a href="/admin/claim/<%=data.ItemID%>">Claim</a></td>
         </tr>
         <%  i++; }) %>
         <% } else{ %>
@@ -58,13 +55,12 @@
         <% } %>
     </table>
     <br><br>
-    <button><a href="/admin/Lost">Lost Items</a></button>
-    <button><a href="/admin/claimed">Claimed Items</a></button>
-    <br><br>
-    <button><a href="/admin/logform">Log an unclaimed item</a></button>
-    <br>
+    <button><a href="/admin/lost">Lost Items</a></button>
+    <button><a href="/admin/unclaimed">Unclaimed Items</a></button>
+    </div>
 </div>
-</div>
+
+
 
 </body>
 </html>
