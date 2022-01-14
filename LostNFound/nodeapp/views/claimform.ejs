@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+<!--====form section start====-->
+<div class="claim-form" style="background-color:white; width: 500px;height: 775px; text-align:center; vertical-align: center; margin-left: auto;
+  margin-right: auto;">
+    <h2>Claim Item</h2>
+    <form action="<%=(typeof editData!='undefined')?'/admin/claim/'+editData.ItemID_FK:'/admin/create'%>" method="POST">
+        <label>Date</label>
+        <input type="date" placeholder="Enter Date" name="claimdate" >
+        <label>Time</label>
+        <input type="time" placeholder="Enter Time" name="claimtime" >
+        <label>First Name</label>
+        <input type="text" placeholder="Enter First Name" name="firstname" >
+        <label>Last Name</label>
+        <input type="text" placeholder="Enter First Name" name="lastname" >
+        <label>Driver's License</label>
+        <input type="text" placeholder="Driver's License" name="driverLicense">
+
+
+
+        <br><button type="submit">Submit</button>
+        <br><button><a href="/admin/claimed"> Back to Unclaimed Items</a></button>
+    </form>
+</div>
+
+<!--====form section start====-->
+</body>
+</html>

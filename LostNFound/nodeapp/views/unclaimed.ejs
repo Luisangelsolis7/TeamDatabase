@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Fetch using MySQL and Node.js</title>
+    <title>Unclaimed Items</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <p align="right">
+        <button><a href="/">Log Out</a></button>
+    </p>
+    <div><img class="one" src="/images/Aurora_University_logo.jpg" alt="Aurora Banner" style="height: 130px;width: 400px;"></div>
 </head>
 <body>
-<div class="table-data">
-    <h2>Display Data using Node.js & MySQL</h2>
+<div class="container" style="background-color:white; width: 75%;height: 100%; text-align:center; vertical-align: center; margin-left: auto;
+  margin-right: auto;">
+
+<div class="table-data" style="vertical-align: center">
+    <h2>Unclaimed Items</h2>
     <table border="1">
         <tr>
             <th>Item ID</th>
             <th>Item Type</th>
-            <th>Item Location</th>
-            <th>Edit</th>
-            <th>Claim</th>
+            <th>Item Name</th>
+            <th>Description</th>
+            <th>Value</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Officer Last Name</th>
+            <th>Officer Badge Number</th>
         </tr>
 
         <%
@@ -21,11 +35,17 @@
         userData.forEach(function(data){
         %>
         <tr>
-            <td><%=data.item_id %></td>
-            <td><%=data.item_type %></td>
-            <td><%=data.item_loc_found %></td>
-            <td><a href="/users/edit/<%=data.id%>">Edit</a></td>
-            <td><a href="/users/delete/<%=data.id%>">Claim</a></td>
+            <td><%=data.ItemID %></td>
+            <td><%=data.CategoryName %></td>
+            <td><%=data.ItemName %></td>
+            <td><%=data.ItemDesc %></td>
+            <td><%=data.ItemValue %></td>
+            <td><%=data.Location %></td>
+            <td><%=data.Date %></td>
+            <td><%=data.Time %></td>
+            <td><%=data.Officer_Lname %></td>
+            <td><%=data.BadgeNumber %></td>
+            <td><a href="/admin/claim/<%=data.ItemID%>">Claim</a></td>
         </tr>
         <%  i++; }) %>
         <% } else{ %>
@@ -34,38 +54,17 @@
             </tr>
         <% } %>
     </table>
+    <br><br>
+    <button><a href="/admin/Lost">Lost Items</a></button>
+    <button><a href="/admin/claimed">Claimed Items</a></button>
+    <br><br>
+    <button><a href="/admin/logform">Log an unclaimed item</a></button>
+    <br>
 </div>
-<h2>Add an Item</h2>
-<p>Click on the "Open Form" button to add an item</p>
-<div class="openBtn">
-    <button class="openButton" onclick="openForm()"><strong>Open Form</strong></button>
 </div>
-<div class="AddItemPopUp0">
-    <div class="formPopup" id="popupForm">
-        <form  class="formContainer">
-            <h2>Item Details</h2>
-            <label for="email">
-                <strong>E-mail</strong>
-            </label>
-            <input type="text" id="email" placeholder="Your Email" name="email" required>
-            <label for="psw">
-                <strong>Password</strong>
-            </label>
-            <input type="password" id="psw" placeholder="Your Password" name="psw" required>
-            <button type="submit" class="btn">Log in</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
-    </div>
-</div>
-<script>
-    openForm();
-    function openForm() {
-        document.getElementById("popupForm").style.display = "block";
-    }
-    function closeForm() {
-        document.getElementById("popupForm").style.display = "none";
-    }
 
-</script>
+
+
+
 </body>
 </html>
