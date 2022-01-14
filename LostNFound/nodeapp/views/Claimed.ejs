@@ -1,2 +1,66 @@
-<h1>Hello</h1>
-<h2>This is the Claimed Page</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Claimed Items</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <p align="right">
+        <button><a href="/">Log Out</a></button>
+    </p>
+    <div><img class="one" src="/images/Aurora_University_logo.jpg" alt="Aurora Banner" style="height: 130px;width: 400px;"></div>
+</head>
+<body>
+<div class="container" style="background-color:white; width: 75%;height: 100%; text-align:center; vertical-align: center; margin-left: auto;
+  margin-right: auto;">
+<div class="table-data">
+    <h2>Claimed Items</h2>
+    <table border="1">
+        <tr>
+            <th>Item ID</th>
+            <th>Item Type</th>
+            <th>Item Name</th>
+            <th>Description</th>
+            <th>Value</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Name</th>
+            <th>Driver's License</th>
+            <th>Officer Last Name</th>
+            <th>Officer Badge Number</th>
+        </tr>
+
+        <%
+        if(userData.length!=0){
+            var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=data.ItemID %></td>
+            <td><%=data.CategoryName %></td>
+            <td><%=data.ItemName %></td>
+            <td><%=data.ItemDesc %></td>
+            <td><%=data.ItemValue %></td>
+            <td><%=data.Date %></td>
+            <td><%=data.Time %></td>
+            <td><%=data.User_Fname %> <%=data.User_Lname %></td>
+            <td><%=data.DriverLicenseNumber %></td>
+            <td><%=data.Officer_Lname %></td>
+            <td><%=data.BadgeNumber %></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    <br><br>
+    <button><a href="/admin/lost">Lost Items</a></button>
+    <button><a href="/admin/unclaimed">Unclaimed Items</a></button>
+    </div>
+</div>
+
+
+
+</body>
+</html>
