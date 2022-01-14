@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -7,6 +8,21 @@ var indexRouter = require('./routes/index');
 var unclaimedRouter = require('./routes/unclaimed');
 var claimedRouter = require('./routes/claimed');
 var app = express();
+=======
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
+let indexRouter = require('./routes/index');
+let adminRouter = require('./routes/admin');
+let bodyParser = require('body-parser');
+let app = express();
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended : true}))
+// view engine setup
+>>>>>>> Stashed changes
 
 // view engine setup
 app.use('/', indexRouter);
